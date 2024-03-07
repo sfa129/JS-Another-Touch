@@ -57,5 +57,20 @@
 // JSON.stringify(object)
 
 
+//Array slice method
+//Note: Slice method won't mutate the original array but it returns the subset as a new array.
+// let newArr = [0, 1, 2, 3, 4, 5];
+// console.log(newArr.slice(0,3));
+// console.log(newArr);
 
+//Array splice method
+// let arrayIntegersOriginal1 = [1, 2, 3, 4, 5];
+// let newVar = arrayIntegersOriginal1.splice(0,3);
+// console.log(newVar);
+// console.log(arrayIntegersOriginal1);
 
+//if you do not pass the second argument, it takes till end by default
+// let arrayIntegersOriginal2 = [1, 2, 3, 4, 5];
+// let newLet = arrayIntegersOriginal2.splice(1)
+// console.log(newLet);
+// console.log(arrayIntegersOriginal2);
