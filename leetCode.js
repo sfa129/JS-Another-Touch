@@ -67,27 +67,54 @@
 // console.log(removeDuplicates(nums))
 
 //LeetCode Problem 04
-let nums = [1, 6, 3, 4, 5, 6, 6, 8];
-let val =  6
+// let nums = [1, 6, 3, 4, 5, 6, 6, 8];
+// let val =  6
 
-function removeElement(nums, val) {
-    let k = 0; // Initialize count of elements not equal to val
+// function removeElement(nums, val) {
+//     let k = 0; // Initialize count of elements not equal to val
 
-    // Iterate through the array
-    for (let i = 0; i < nums.length; i++) {
-        // If current element is not equal to val
-        if (nums[i] !== val) {
-            // Move the current element to the position indicated by k
-            nums[k] = nums[i];
-            // Increment k to indicate the count of elements not equal to val
-            k++;
+//     // Iterate through the array
+//     for (let i = 0; i < nums.length; i++) {
+//         // If current element is not equal to val
+//         if (nums[i] !== val) {
+//             // Move the current element to the position indicated by k
+//             nums[k] = nums[i];
+//             // Increment k to indicate the count of elements not equal to val
+//             k++;
+//         }
+//     }
+
+//     return k; // Return the count of elements not equal to val
+// }
+
+// const result = removeElement(nums, val);
+// console.log(result)
+// console.log(nums.slice(0, result))
+
+//LeetCode Problem 05
+let digits = [1, 2, 3];
+
+function plusOne(digits) {
+    let n = digits.length;
+    let carry = 1;
+    
+    for (let i = n - 1; i >= 0; i--) { // Start from the least significant digit
+        let total = digits[i] + carry;      //total = 3;
+        digits[i] = total % 10;             //3
+        carry = Math.floor(total / 10);     //0
+        
+        if (carry === 0) { // If there's no more carry, we can stop
+            break;
         }
     }
-
-    return k; // Return the count of elements not equal to val
+    
+    if (carry === 1) { // If there's still a carry after iterating through all digits
+        digits.unshift(1);
+    }
+    
+    return digits;
 }
 
-const result = removeElement(nums, val);
-console.log(result)
-console.log(nums.slice(0, result))
 
+let result = plusOne(digits);
+console.log(result); // Output: [1, 2, 4]
