@@ -92,29 +92,41 @@
 // console.log(nums.slice(0, result))
 
 //LeetCode Problem 05
-let digits = [1, 2, 3];
+// let digits = [1, 2, 3];
 
-function plusOne(digits) {
-    let n = digits.length;
-    let carry = 1;
+// function plusOne(digits) {
+//     let n = digits.length;
+//     let carry = 1;
     
-    for (let i = n - 1; i >= 0; i--) { // Start from the least significant digit
-        let total = digits[i] + carry;      //total = 3;
-        digits[i] = total % 10;             //3
-        carry = Math.floor(total / 10);     //0
+//     for (let i = n - 1; i >= 0; i--) { // Start from the least significant digit
+//         let total = digits[i] + carry;      //total = 3;
+//         digits[i] = total % 10;             //3
+//         carry = Math.floor(total / 10);     //0
         
-        if (carry === 0) { // If there's no more carry, we can stop
-            break;
-        }
-    }
+//         if (carry === 0) { // If there's no more carry, we can stop
+//             break;
+//         }
+//     }
     
-    if (carry === 1) { // If there's still a carry after iterating through all digits
-        digits.unshift(1);
-    }
+//     if (carry === 1) { // If there's still a carry after iterating through all digits
+//         digits.unshift(1);
+//     }
     
-    return digits;
-}
+//     return digits;
+// }
 
 
-let result = plusOne(digits);
-console.log(result); // Output: [1, 2, 4]
+// let result = plusOne(digits);
+// console.log(result); // Output: [1, 2, 4]
+
+//Self
+// let digits = [1,2,3,4]
+// const digitsSpread = ...digits
+
+// console.log(digitsSpread)
+// // function plusOne(digits){
+    
+
+// }
+
+//LeetCode Problem 6
