@@ -152,3 +152,30 @@ var subsetsWithDup = function(nums) {
 // Example usage:
 const nums = [1, 2, 2];
 console.log(subsetsWithDup(nums));
+
+//LeetCode Problem 7
+function maxArea(height) {
+    let maxWater = 0;
+    let left = 0;
+    let right = height.length - 1;
+
+    while (left < right) {
+        const minHeight = Math.min(height[left], height[right]);
+        const width = right - left;
+        const currentWater = minHeight * width;
+        maxWater = Math.max(maxWater, currentWater);
+
+        // Move the pointer with the smaller height towards the other pointer
+        if (height[left] < height[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+
+    return maxWater;
+}
+
+// Example usage:
+const height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+console.log(maxArea(height)); // Output should be 49
